@@ -18,7 +18,10 @@ app.use(helmet({
 }));
 
 app.use(cors({
-  origin: config.clientUrl,
+  origin: [
+    "http://localhost:5173",
+    "https://fleet-flow-indol-delta.vercel.app"
+  ],
   credentials: true,
 }));
 
