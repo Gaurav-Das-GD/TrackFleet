@@ -4,7 +4,7 @@ dotenv.config();
 export const config = {
   env: process.env.NODE_ENV || 'development',
   port: parseInt(process.env.PORT || '5000', 10),
-  mongodbUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/fleetflow',
+  mongodbUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/TrackFleet',
   redisUrl: process.env.REDIS_URL || 'redis://localhost:6379',
   jwt: {
     secret: process.env.JWT_SECRET || 'dev-jwt-secret-change-in-production',
@@ -18,7 +18,7 @@ export const config = {
     port: parseInt(process.env.SMTP_PORT || '587', 10),
     user: process.env.SMTP_USER || '',
     pass: process.env.SMTP_PASS || '',
-    from: process.env.EMAIL_FROM || 'FleetFlow <noreply@fleetflow.io>',
+    from: process.env.EMAIL_FROM || 'TrackFleet <noreply@TrackFleet.io>',
   },
   mapboxToken: process.env.MAPBOX_TOKEN || '',
   rateLimit: {

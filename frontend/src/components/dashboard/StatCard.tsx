@@ -11,26 +11,47 @@ interface StatCardProps {
   className?: string;
 }
 
-export function StatCard({ title, value, change, icon: Icon, trend = 'neutral', className }: StatCardProps) {
+export function StatCard({
+  title,
+  value,
+  change,
+  icon: Icon,
+  trend = 'neutral',
+  className,
+}: StatCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={cn('rounded-xl border bg-card p-6 card-hover', className)}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.25 }}
+      className={cn(
+        'rounded-2xl border bg-card p-6 shadow-md hover:shadow-xl transition-all duration-300',
+        className
+      )}
     >
       <div className="flex items-center justify-between">
-        <p className="text-sm font-medium text-muted-foreground">{title}</p>
-        <div className="rounded-lg bg-primary/10 p-2">
-          <Icon className="h-4 w-4 text-primary" />
+        <div>
+          <p className="text-sm font-medium text-muted-foreground">
+            {title}
+          </p>
+        </div>
+
+        <div className="rounded-xl bg-primary/10 p-3">
+          <Icon className="h-5 w-5 text-primary" />
         </div>
       </div>
-      <div className="mt-3">
-        <p className="text-2xl font-bold tracking-tight">{value}</p>
+
+      <div className="mt-4">
+        <p className="text-3xl font-bold tracking-tight">
+          {value}
+        </p>
+
         {change && (
           <p
             className={cn(
-              'text-xs mt-1',
-              trend === 'up' && 'text-green-600',
+              'text-xs mt-2 font-medium',
+              trend === 'up' && 'text-emerald-600',
               trend === 'down' && 'text-red-600',
               trend === 'neutral' && 'text-muted-foreground'
             )}

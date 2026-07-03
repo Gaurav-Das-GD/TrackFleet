@@ -56,7 +56,7 @@ export default function RegisterPage() {
       const { data } = await authApi.register(payload);
       const { user, accessToken, refreshToken } = data.data;
       dispatch(setCredentials({ user, accessToken, refreshToken }));
-      toast.success('Account created!', `Welcome to FleetFlow, ${user.firstName}`);
+      toast.success('Account created!', `Welcome to TrackFleet, ${user.firstName}`);
       const path = user.role === 'driver' ? '/driver' : '/customer';
       navigate(path);
     } catch (err: unknown) {
@@ -77,7 +77,7 @@ export default function RegisterPage() {
             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
               <Truck className="w-6 h-6 text-white" />
             </div>
-            <span className="text-3xl font-bold text-white">FleetFlow</span>
+            <span className="text-3xl font-bold text-white">TrackFleet</span>
           </div>
           <h2 className="text-3xl font-bold text-white mb-4">Join the fleet network</h2>
           <p className="text-white/60 mb-8">
@@ -107,7 +107,7 @@ export default function RegisterPage() {
           className="w-full max-w-md py-8"
         >
           <h1 className="text-2xl font-bold mb-1">Create your account</h1>
-          <p className="text-muted-foreground mb-6">Get started with FleetFlow in minutes</p>
+          <p className="text-muted-foreground mb-6">Get started with TrackFleet in minutes</p>
 
           <div className="flex gap-2 p-1 rounded-lg bg-muted mb-6">
             {(['customer', 'driver'] as const).map((r) => (

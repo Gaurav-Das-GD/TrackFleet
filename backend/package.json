@@ -1,7 +1,7 @@
 {
-  "name": "fleetflow-backend",
+  "name": "TrackFleet-backend",
   "version": "1.0.0",
-  "description": "FleetFlow - Realtime Fleet Tracking & Logistics Platform API",
+  "description": "TrackFleet - Realtime Fleet Tracking & Logistics Platform API",
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",

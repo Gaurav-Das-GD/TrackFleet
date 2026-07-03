@@ -27,8 +27,8 @@ export const sendVerificationEmail = async (email: string, token: string): Promi
   const url = `${config.clientUrl}/verify-email?token=${token}`;
   await sendEmail(
     email,
-    'Verify your FleetFlow account',
-    `<h2>Welcome to FleetFlow!</h2><p>Click <a href="${url}">here</a> to verify your email.</p>`
+    'Verify your TrackFleet account',
+    `<h2>Welcome to TrackFleet!</h2><p>Click <a href="${url}">here</a> to verify your email.</p>`
   );
 };
 
@@ -36,7 +36,7 @@ export const sendPasswordResetEmail = async (email: string, token: string): Prom
   const url = `${config.clientUrl}/reset-password?token=${token}`;
   await sendEmail(
     email,
-    'Reset your FleetFlow password',
+    'Reset your TrackFleet password',
     `<h2>Password Reset</h2><p>Click <a href="${url}">here</a> to reset your password. Link expires in 1 hour.</p>`
   );
 };

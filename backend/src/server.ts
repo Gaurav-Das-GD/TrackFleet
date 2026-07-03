@@ -22,7 +22,7 @@ const startServer = async () => {
   }
 
   httpServer.listen(config.port, () => {
-    logger.info(`FleetFlow API running on port ${config.port} [${config.env}]`);
+    logger.info(`TrackFleet API running on port ${config.port} [${config.env}]`);
   });
 
   const shutdown = async () => {

@@ -10,13 +10,13 @@ import { setCredentials } from '@/redux/slices/authSlice';
 import { toast } from '@/components/ui/toast';
 
 const demos = [
-  { label: 'Admin', email: 'admin@fleetflow.io', password: 'Admin@12345' },
-  { label: 'Driver', email: 'driver1@fleetflow.io', password: 'Driver@12345' },
+  { label: 'Admin', email: 'admin@TrackFleet.io', password: 'Admin@12345' },
+  { label: 'Driver', email: 'driver1@TrackFleet.io', password: 'Driver@12345' },
   { label: 'Customer', email: 'john@example.com', password: 'Customer@123' },
 ];
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('admin@fleetflow.io');
+  const [email, setEmail] = useState('admin@TrackFleet.io');
   const [password, setPassword] = useState('Admin@12345');
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -49,7 +49,7 @@ export default function LoginPage() {
             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
               <Truck className="w-6 h-6 text-white" />
             </div>
-            <span className="text-3xl font-bold text-white">FleetFlow</span>
+            <span className="text-3xl font-bold text-white">TrackFleet</span>
           </div>
           <h2 className="text-3xl font-bold text-white mb-4">Fleet intelligence at your fingertips</h2>
           <p className="text-white/60">Track deliveries, manage drivers, and optimize routes — all in realtime.</p>
@@ -59,7 +59,7 @@ export default function LoginPage() {
       <div className="flex-1 flex items-center justify-center p-6 bg-background">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
           <h1 className="text-2xl font-bold mb-1">Welcome back</h1>
-          <p className="text-muted-foreground mb-8">Sign in to your FleetFlow account</p>
+          <p className="text-muted-foreground mb-8">Sign in to your TrackFleet account</p>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>

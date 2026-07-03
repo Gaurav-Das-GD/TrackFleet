@@ -28,7 +28,7 @@ const seed = async () => {
 
   logger.info('Creating users...');
   const admin = await User.create({
-    email: 'admin@fleetflow.io',
+    email: 'admin@TrackFleet.io',
     password: 'Admin@12345',
     firstName: 'Alex',
     lastName: 'Morgan',
@@ -45,11 +45,11 @@ const seed = async () => {
   const customers = await Promise.all(customerData.map((u) => User.create({ ...u, isVerified: true })));
 
   const driverData = [
-    { email: 'driver1@fleetflow.io', password: 'Driver@12345', firstName: 'Marcus', lastName: 'Johnson', phone: '+1-555-0201' },
-    { email: 'driver2@fleetflow.io', password: 'Driver@12345', firstName: 'Elena', lastName: 'Rodriguez', phone: '+1-555-0202' },
-    { email: 'driver3@fleetflow.io', password: 'Driver@12345', firstName: 'David', lastName: 'Kim', phone: '+1-555-0203' },
-    { email: 'driver4@fleetflow.io', password: 'Driver@12345', firstName: 'Priya', lastName: 'Patel', phone: '+1-555-0204' },
-    { email: 'driver5@fleetflow.io', password: 'Driver@12345', firstName: 'James', lastName: 'Wilson', phone: '+1-555-0205' },
+    { email: 'driver1@TrackFleet.io', password: 'Driver@12345', firstName: 'Marcus', lastName: 'Johnson', phone: '+1-555-0201' },
+    { email: 'driver2@TrackFleet.io', password: 'Driver@12345', firstName: 'Elena', lastName: 'Rodriguez', phone: '+1-555-0202' },
+    { email: 'driver3@TrackFleet.io', password: 'Driver@12345', firstName: 'David', lastName: 'Kim', phone: '+1-555-0203' },
+    { email: 'driver4@TrackFleet.io', password: 'Driver@12345', firstName: 'Priya', lastName: 'Patel', phone: '+1-555-0204' },
+    { email: 'driver5@TrackFleet.io', password: 'Driver@12345', firstName: 'James', lastName: 'Wilson', phone: '+1-555-0205' },
   ];
   const driverUsers = await Promise.all(
     driverData.map((u) => User.create({ ...u, role: UserRole.DRIVER, isVerified: true }))
@@ -144,16 +144,16 @@ const seed = async () => {
 
   logger.info('Creating notifications...');
   await Notification.insertMany([
-    { user: admin._id, type: NotificationType.SYSTEM, title: 'Welcome to FleetFlow', message: 'Your admin dashboard is ready.', isRead: false },
+    { user: admin._id, type: NotificationType.SYSTEM, title: 'Welcome to TrackFleet', message: 'Your admin dashboard is ready.', isRead: false },
     { user: customers[0]._id, type: NotificationType.DELIVERY, title: 'Delivery Assigned', message: 'A driver has been assigned to your delivery.', isRead: false },
     { user: driverUsers[0]._id, type: NotificationType.DELIVERY, title: 'New Assignment', message: 'You have a new delivery assignment.', isRead: true },
   ]);
 
   logger.info('Seed completed successfully!');
   logger.info('--- Demo Accounts ---');
-  logger.info('Admin:    admin@fleetflow.io / Admin@12345');
+  logger.info('Admin:    admin@TrackFleet.io / Admin@12345');
   logger.info('Customer: john@example.com / Customer@123');
-  logger.info('Driver:   driver1@fleetflow.io / Driver@12345');
+  logger.info('Driver:   driver1@TrackFleet.io / Driver@12345');
 
   await disconnectDatabase();
   process.exit(0);

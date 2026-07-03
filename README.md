@@ -1,4 +1,4 @@
-# FleetFlow – Realtime Fleet Tracking & Logistics Platform
+# TrackFleet – Realtime Fleet Tracking & Logistics Platform
 
 ## Quick Start
 
@@ -32,6 +32,6 @@ App: **http://localhost:5173**
 ## Demo Accounts
 | Role     | Email                  | Password       |
 |----------|------------------------|----------------|
-| Admin    | admin@fleetflow.io     | Admin@12345    |
-| Driver   | driver1@fleetflow.io   | Driver@12345   |
+| Admin    | admin@TrackFleet.io     | Admin@12345    |
+| Driver   | driver1@TrackFleet.io   | Driver@12345   |
 | Customer | john@example.com       | Customer@123   |
