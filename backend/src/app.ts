@@ -20,7 +20,8 @@ app.use(helmet({
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://fleet-flow-indol-delta.vercel.app"
+    "https://track-fleet-nine.vercel.app",
+    "https://track-fleet-git-main-gaurav-das-gd-dev.vercel.app"
   ],
   credentials: true,
 }));
